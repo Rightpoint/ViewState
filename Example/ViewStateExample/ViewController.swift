@@ -13,15 +13,12 @@ import SwiftUI
 final class ViewController: UIViewController {
 
     struct ViewState: ViewStateProtocol {
-        var labelText: String = "Example"
+        var labelText: String = ""
         var labelColor: UIColor = .black
     }
 
-    var state = ViewState() {
-        didSet {
-            renderIfNeeded(state: state, oldState: oldValue)
-        }
-    }
+    @Observed
+    var state: ViewState
 
     private let label: UILabel = {
         let label = UILabel()
@@ -29,6 +26,15 @@ final class ViewController: UIViewController {
         label.textAlignment = .center
         return label
     }()
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
