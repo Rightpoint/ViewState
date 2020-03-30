@@ -5,8 +5,8 @@ jobs:
     executor: xcode-11
     steps:
       - checkout
-      - xcodebuild test -project Tests/ViewStateTests.xcodeproj -scheme ViewStateTests
-      - xcodebuild build -project Example/ViewStateExample.xcodeproj -scheme ViewStateExample
+      - run: xcodebuild test -project Tests/ViewStateTests.xcodeproj -scheme ViewStateTests
+      - run: xcodebuild build -project Example/ViewStateExample.xcodeproj -scheme ViewStateExample
 
 executors:
   xcode-11:
