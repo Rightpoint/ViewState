@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol ActionsProtocol: class {}
+public protocol ActionsProtocol: AnyObject {}
 
 public protocol HasActions: class {
     associatedtype Actions: ActionsProtocol

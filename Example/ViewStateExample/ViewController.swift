@@ -10,6 +10,7 @@ import UIKit
 import ViewState
 import SwiftUI
 
+
 final class ViewController: UIViewController {
 
     struct ViewState: ViewStateProtocol {
@@ -19,6 +20,8 @@ final class ViewController: UIViewController {
 
     @Observed
     var state: ViewState
+
+    private let exampleView = ExampleView()
 
     private let label: UILabel = {
         let label = UILabel()
@@ -41,7 +44,10 @@ final class ViewController: UIViewController {
 
         view.backgroundColor = .white
 
-        let stack = UIStackView(arrangedSubviews: [label])
+        let stack = UIStackView(arrangedSubviews: [exampleView,
+                                                   UIView(),
+                                                   label])
+        stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.isLayoutMarginsRelativeArrangement = true
         stack.layoutMargins = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -53,6 +59,11 @@ final class ViewController: UIViewController {
             stack.topAnchor.constraint(equalTo: view.topAnchor),
             stack.bottomAnchor.constraint(equalTo: view.bottomAnchor),
         ])
+
+        exampleView.state.update {
+            $0.topLabelText = "Heading"
+            $0.bottomLabelText = "Subheading"
+        }
     }
 }
 

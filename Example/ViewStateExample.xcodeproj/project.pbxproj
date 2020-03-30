@@ -13,6 +13,7 @@
 		D9284A8D242D7C6100DA147B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9284A8B242D7C6100DA147B /* LaunchScreen.storyboard */; };
 		D9284A97242D7D2400DA147B /* ViewState in Frameworks */ = {isa = PBXBuildFile; productRef = D9284A96242D7D2400DA147B /* ViewState */; };
 		D9284B20242D86DF00DA147B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9284B1F242D86DF00DA147B /* SwiftUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		D963B81624329715000391EF /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D963B81524329715000391EF /* ExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		D9284A94242D7D0E00DA147B /* ViewState */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ViewState; path = ..; sourceTree = "<group>"; };
 		D9284A98242D7D7400DA147B /* ViewStateExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ViewStateExample.entitlements; sourceTree = "<group>"; };
 		D9284B1F242D86DF00DA147B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/SwiftUI.framework; sourceTree = DEVELOPER_DIR; };
+		D963B81524329715000391EF /* ExampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				D9284A98242D7D7400DA147B /* ViewStateExample.entitlements */,
 				D9284A80242D7C6000DA147B /* AppDelegate.swift */,
 				D9284A84242D7C6000DA147B /* ViewController.swift */,
+				D963B81524329715000391EF /* ExampleView.swift */,
 				D9284A89242D7C6100DA147B /* Assets.xcassets */,
 				D9284A8B242D7C6100DA147B /* LaunchScreen.storyboard */,
 				D9284A8E242D7C6100DA147B /* Info.plist */,
@@ -154,6 +157,7 @@
 			files = (
 				D9284A85242D7C6000DA147B /* ViewController.swift in Sources */,
 				D9284A81242D7C6000DA147B /* AppDelegate.swift in Sources */,
+				D963B81624329715000391EF /* ExampleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
