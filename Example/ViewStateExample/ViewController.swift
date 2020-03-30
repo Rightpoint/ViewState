@@ -71,7 +71,7 @@ extension ViewController.ViewState: UIViewControllerRepresentable {
 #if DEBUG
 
 @available(iOS 13.0, *)
-struct OnboardingPageViewController_Previews: PreviewProvider {
+struct ViewController_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {

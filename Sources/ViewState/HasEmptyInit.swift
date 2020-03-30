@@ -7,9 +7,4 @@
 
 public protocol HasEmptyInit {
     init()
-    static var empty: Self { get }
-}
-
-public extension HasEmptyInit {
-    static var empty: Self { .init() }
 }

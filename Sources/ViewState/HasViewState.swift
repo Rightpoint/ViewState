@@ -20,6 +20,7 @@ public protocol HasViewState: AnyObject {
 }
 
 extension HasViewState where Self: NSObject {
+    /// This convenience initializer will not work if you create designated initializer
     public init(state: ViewState) {
         self.init()
         self.state = state

@@ -1,9 +1,27 @@
 
-/// Unfortunately referencing the enclosing self in property wrapper
-/// is still not a public API in Swift, so this might break at any moment.
-/// https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-wrappers.md#referencing-the-enclosing-self-in-a-wrapper-type
+/// You can use this to annotate your `state` in a `UIView` or `UIViewController`
+/// that conforms to `HasViewState` to automatically render when the state is updated.
 ///
-/// Instead you can manually call `renderIfNeeded` in a `willSet`
+/// For example:
+/// ```
+/// @Observed
+/// var state: ViewState
+/// ```
+///
+/// - note: Unfortunately referencing the enclosing self in property wrapper
+/// is still [not a public API][1] in Swift, so this might break at any moment.
+///
+///
+/// If this is a concern, you can instead manually call `renderIfNeeded` in a `didSet`:
+/// ```
+/// var state = ViewState() {
+///     didSet {
+///         renderIfNeeded(state: state, oldState: oldValue)
+///     }
+/// }
+/// ```
+///
+/// [1]: https://github.com/apple/swift-evolution/blob/master/proposals/0258-property-wrappers.md#referencing-the-enclosing-self-in-a-wrapper-type
 @propertyWrapper
 public struct Observed<Value: ViewStateProtocol> {
 
@@ -21,8 +39,8 @@ public struct Observed<Value: ViewStateProtocol> {
         get { instance[keyPath: storageKeyPath].wrappedValue }
         set {
             let oldValue = instance[keyPath: storageKeyPath].wrappedValue
-            instance.renderIfNeeded(state: newValue, oldState: oldValue)
             instance[keyPath: storageKeyPath].wrappedValue = newValue
+            instance.renderIfNeeded(state: newValue, oldState: oldValue)
         }
     }
 }
