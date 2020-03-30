@@ -46,6 +46,21 @@ extension ViewController: HasViewState {
 }
 ```
 
+Then whenever you want to update your view's state:
+
+```swift
+func startLoading() {
+    state.labelText = "Loading..."
+}
+
+func showError() {
+    state.update {
+        $0.labelText = "Ooops"
+        $0.labelColor = .red
+    }
+}
+``` 
+
 ### `ViewState`
 
 For any `UIView` or `UIViewController` subclass, make a nested `struct` called `ViewState` and conform it to `ViewStateProtocol`. It must support an empty initializer, so provide some sane default values. All properties must be `Equatable`.
