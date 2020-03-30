@@ -64,7 +64,7 @@ To keep things minimal, only add properties here that are intended to be dynamic
 
 Then conform the parent type to `HasViewState`. The `render` function should be the only place that updates the dynamic values of your subviews.
 
-```
+```swift
 final class ViewController: UIViewController {
     @Observed
     var state: ViewState
