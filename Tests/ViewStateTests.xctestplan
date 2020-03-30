@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "7B46DA71-8115-4C80-94A0-6CC84A2D6C7A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:ViewStateTests.xcodeproj",
+        "identifier" : "D963B80624328A98000391EF",
+        "name" : "ViewStateTests"
+      }
+    }
+  ],
+  "version" : 1
+}
